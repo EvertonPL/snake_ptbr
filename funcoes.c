@@ -79,7 +79,7 @@ void desenhar_tabuleiro(Jogo *jogo) {
         printf("\n");
     }
 	// Estatísticas
-    printf("Nome da cobra: %s  |  Pontos: %d  |  Nï¿½vel da Fase: %d\n", 
+    printf("Nome da cobra: %s  |  Pontos: %d  |  Nível da Fase: %d\n", 
            jogo->cobra.nome, 
            jogo->pontos, 
            jogo->fase_atual.dificuldade);
@@ -226,7 +226,7 @@ void exibir_estatisticas() {
     limpar_tela();
     FILE *f = fopen("estatisticas.bin", "rb");
     if (f == NULL) {
-        printf("Nenhuma estatï¿½stica encontrada.\n");
+        printf("Nenhuma estatística encontrada.\n");
         printf("Pressione qualquer tecla para voltar...\n");
         getchar();
         getchar();
