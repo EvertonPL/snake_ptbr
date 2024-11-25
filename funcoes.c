@@ -61,7 +61,7 @@ void desenhar_tabuleiro(Jogo *jogo) {
     for (i = 0; i < jogo->fase_atual.altura; i++) { // Desenhando as paredes da fase
         for (j = 0; j < jogo->fase_atual.largura; j++) {
             if (i == 0 || i == jogo->fase_atual.altura - 1 || j == 0 || j == jogo->fase_atual.largura - 1) {
-                printf("#"); // Printa as paredes
+                printf("¦"); // Printa as paredes
             } else if (i == jogo->comida.y && j == jogo->comida.x) { // Gera comida aleatoriamente
                 printf("@");
             } else { // Aumenta o tamanho da Cobra ao comer 
@@ -79,7 +79,7 @@ void desenhar_tabuleiro(Jogo *jogo) {
         printf("\n");
     }
 	// Estatísticas
-    printf("Nome da cobra: %s  |  Pontos: %d  |  Nível da Fase: %d\n", 
+    printf("Nome da cobra: %s  |  Pontos: %d  |  Nï¿½vel da Fase: %d\n", 
            jogo->cobra.nome, 
            jogo->pontos, 
            jogo->fase_atual.dificuldade);
@@ -191,7 +191,7 @@ void salvar_estatisticas(Jogo *jogo) {
     if (f != NULL) {
         fwrite(&jogo->cobra, sizeof(jogo->cobra), 1, f);
         fwrite(&jogo->pontos, sizeof(jogo->pontos), 1, f);
-        fwrite(&jogo->fase_atual.dificuldade, sizeof(int), 1, f); // Salva o nÃ­vel
+        fwrite(&jogo->fase_atual.dificuldade, sizeof(int), 1, f); // Salva o nível
         fclose(f);
     } else {
         printf("Erro ao salvar as estatísticas.\n");
@@ -226,7 +226,7 @@ void exibir_estatisticas() {
     limpar_tela();
     FILE *f = fopen("estatisticas.bin", "rb");
     if (f == NULL) {
-        printf("Nenhuma estatística encontrada.\n");
+        printf("Nenhuma estatï¿½stica encontrada.\n");
         printf("Pressione qualquer tecla para voltar...\n");
         getchar();
         getchar();
